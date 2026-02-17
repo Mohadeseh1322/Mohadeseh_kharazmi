@@ -639,35 +639,13 @@ async def main():
                 time_rect = time_text.get_rect(center=(WIDTH//2, HEIGHT//2 - 80))
                 screen.blit(time_text, time_rect)
 
-                #help_text = font.render("برای ادامه Space یا Enter بزنید", True, WHITE)
-                #screen.blit(help_text, (WIDTH//2 - help_text.get_width()//2, HEIGHT//2 + 120))
-
                 if result_timer > 0:
                     stage7_background = pygame.image.load(stage7_background_path)
                     stage7_background = pygame.transform.scale(stage7_background, (WIDTH, HEIGHT))
-                  #  countdown_text = font.render(f"بازگشت خودکار در: {result_timer//60 + 1}", True, WHITE)
-                  #  screen.blit(countdown_text, (WIDTH//2 - countdown_text.get_width()//2, HEIGHT//2 + 160))
-
-           # elif game_state == GAME_END:
-            #    congrats1 = big_font.render("🎉 تبریک! 🎉", True, GOLD)
-              #  congrats1_rect = congrats1.get_rect(center=(WIDTH//2, HEIGHT//2 - 60))
-                #screen.blit(congrats1, congrats1_rect)
-
-                #if remaining_time <= 0:
-                    #msg = "زمان شما به پایان رسید!"
-                #else:
-                #    msg = "شما بازی را با موفقیت به پایان رساندید!"
-                #congrats2 = font.render(msg, True, WHITE)
-                #congrats2_rect = congrats2.get_rect(center=(WIDTH//2, HEIGHT//2))
-                #screen.blit(congrats2, congrats2_rect)
 
                 score_end = font.render(f"Score: {score}", True, YELLOW)
                 score_end_rect = score_end.get_rect(center=(WIDTH//2, HEIGHT//2 + 50))
                 screen.blit(score_end, score_end_rect)
-
-                #exit_text = font.render("برای خروج هر کلیدی بزنید...", True, WHITE)
-                #exit_rect = exit_text.get_rect(center=(WIDTH//2, HEIGHT//2 + 100))
-                #screen.blit(exit_text, exit_rect)
 
             # رسم دکمه فیروزه‌ای
             if game_state not in [GAME_INTRO, GAME_TIME_SETUP]:
@@ -685,3 +663,4 @@ if __name__ == "__main__":
     asyncio.run(main())
     pygame.quit()
     sys.exit()
+
